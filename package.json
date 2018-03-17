@@ -2,4 +2,7 @@
   "name": "GrooverInfinity",
   "private": true,
   "dependencies": {}
+  "scripts": {
+    "start": "node your-script.js"
+}
 }
