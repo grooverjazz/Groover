@@ -1,0 +1,25 @@
+.sidebar {
+  background: #0d192a;
+  border-right: 1px solid darken(#0d192a, 5%);
+  height: 100vh;
+  padding: 15px;
+}
+
+.sidebar img {
+  max-width: 100%;
+}
+
+.sidebar a {
+  color: #f3f3f3;
+}
+
+.nav-item {
+  margin-left: 15px;
+}
+
+.sub-nav-link {
+  border-left: 3px solid darken(#ff9908, 5%);
+  text-align: left;
+  margin-left: 17px;
+  font-size: 75%;
+}

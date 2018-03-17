@@ -1,0 +1,3 @@
+class Association < ApplicationRecord
+	
+end

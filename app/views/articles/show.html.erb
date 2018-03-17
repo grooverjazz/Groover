@@ -1,0 +1,16 @@
+<% content_for :articlemenu do %>
+  <% if can? :new, :article %>
+    <li class="nav-item"><%= link_to 'Nieuw bericht', new_article_path, class: 'sub-nav-link' %></li>
+    <li class="nav-item"><%= link_to 'Bericht aanpassen', edit_article_path(@article), class: 'sub-nav-link' %></li>
+  <% end %>
+  <li class="nav-item"><%= link_to 'Terug naar overzicht', articles_path, class: 'sub-nav-link' %></li>
+<% end %>
+<div class="thumbnail">
+  <%= image_tag @article.cover.url %>
+</div>
+<div class = "paddedcontainer-medium">
+  <h2><%= @article.title %></h2>
+    <div class ="containernews">
+      <p><%= @article.content %></p>
+  </div>
+</div>

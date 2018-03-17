@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Groover</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-1 sidebar">
+          <%= link_to image_tag('association/logo.png'), root_path %>
+          <ul class="nav">
+            <li class="nav-item"><%= link_to 'Nieuws', articles_path, class: 'nav-link' %></li>
+            <% if content_for? :articlemenu %>
+              <%= yield :articlemenu %>
+            <% end %>
+            <li class="nav-item"><%= link_to "Combo's", combos_path, class: 'nav-link' %></li>
+            <% if content_for? :combomenu %>
+              <%= yield :combomenu %>
+            <% end %>
+            <li class="nav-item"><%= link_to 'Vereniging', association_path, class: 'nav-link' %></li>
+            <% if content_for? :associationmenu %>
+              <%= yield :associationmenu %>
+            <% end %>
+            <li class="nav-item"><%= link_to 'Contact', contact_path, class: 'nav-link' %></li>
+            <% if content_for? :contactmenu %>
+              <%= yield :contactmenu %>
+            <% end %>
+            <% if user_signed_in? %>
+              <li class="nav-item"><%= link_to 'Mijn Groover', dashboard_index_path, class: 'nav-link' %></li>
+              <% if content_for? :groovermenu %>
+                <%= yield :groovermenu %>
+              <% end %>
+            <% else %>
+              <li class="nav-item"><%= link_to 'Mijn Groover', user_session_path, class: 'nav-link' %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-xs-8 col-sm-9 col-md-10 col-lg-11 mainbody pre-scrollable">
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

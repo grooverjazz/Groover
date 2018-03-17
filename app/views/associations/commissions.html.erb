@@ -1,0 +1,15 @@
+<% content_for :associationmenu do %>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Aanpassen', edit_association_path, class: 'sub-nav-link' %></li>
+  <% end %>
+  <li class="nav-item"><%= link_to 'Commissies', association_commissions_path, class: 'sub-nav-link' %></li>
+<% end %>
+
+<div class = "paddedcontainer-large">
+	<h1>Commissies</h1>
+
+	<% @commissions.each do |commission| %>
+		<h3><%= commission.name %></h3>
+		<p><%= commission.description %></p>
+	<% end %>
+</div>

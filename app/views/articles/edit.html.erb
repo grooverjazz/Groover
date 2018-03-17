@@ -1,0 +1,23 @@
+<% content_for :articlemenu do %>
+  <% if can? :new, :article %>
+    <li class="nav-item"><%= link_to 'Nieuw bericht', new_article_path, class: 'sub-nav-link' %></li>
+    <li class="nav-item"><%= link_to 'Bericht aanpassen', edit_article_path(@article), class: 'sub-nav-link' %></li>
+  <% end %>
+  <li class="nav-item"><%= link_to 'Terug naar overzicht', articles_path, class: 'sub-nav-link' %></li>
+<% end %>
+<div class = "paddedcontainer-large">
+  <h1>Artikel Aanpassen</h1>
+  <%= bootstrap_form_for @article do |a| %>
+    <%= a.text_field :title %>
+    <%= a.text_area :content %>
+    <%= a.file_field :cover %>
+    <%= a.submit 'Artikel aanpassen', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#article_content' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

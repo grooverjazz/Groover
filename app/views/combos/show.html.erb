@@ -1,0 +1,37 @@
+<% content_for :combomenu do %>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Nieuwe combo', new_combo_path, class: 'sub-nav-link' %></li>
+  <% end %>
+  <% if can? :edit, :band %>
+    <li class="nav-item"><%= link_to 'Combo aanpassen', edit_combo_path(@combo.id), class: 'sub-nav-link' %></li>
+  <% end %>
+  <li class="nav-item"><%= link_to 'Boeken', '#', class: 'sub-nav-link' %></li>
+  <li class="nav-item"><%= link_to 'Terug naar overzicht', combos_path, class: 'sub-nav-link' %></li>
+<% end %>
+<div class="thumbnail">
+  <%= image_tag @combo.cover.url %>
+  <h2 class = "withspacing"><%= @combo.name %></h2>
+</div>
+<div class = "paddedcontainer-small">
+  <div class="col-md-10">
+    <p><%= @combo.description.html_safe %></p>
+  </div>
+  <div class = "col-md-2">
+    <% if @combo.music_uid.present? %>
+      <div class="combosidebar">
+        <h3>Soundcloud</h3>
+        <%= @combo.music_uid %>
+      </div>
+    <% end %>
+    <% if @combo.facebook_uid.present? %>
+      <div class="combosidebar">
+        <h3>Facebook</h3>
+      </div>
+    <% end %>
+    <% if @combo.twitter_uid.present? %>
+      <div class="combosidebar">
+        <h3>Twitter</h3>
+      </div>
+    <% end %>
+  </div>
+</div>

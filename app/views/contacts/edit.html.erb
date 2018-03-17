@@ -1,0 +1,5 @@
+<% content_for :contactmenu do %>
+  <% if can? :edit, :band %>
+    <li class="nav-item"><%= link_to 'Pagina Aanpassen', edit_contact_path(@contact.id), class: 'sub-nav-link' %></li>
+  <% end %>
+<% end %>

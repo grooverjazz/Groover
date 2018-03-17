@@ -1,0 +1,12 @@
+<div class = "devisecontainer">
+  <br>
+  <h2>Wachtwoord Herstellen</h2>
+  <br>
+  <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.email_field :email, autofocus: true %>
+    <br>
+    <%= f.submit 'Nieuw Wachtwoord Aanvragen', class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+  <%= link_to "Heb je al een wachtwoord?", new_session_path(resource_name) %><br />
+</div>

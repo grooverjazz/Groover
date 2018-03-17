@@ -1,0 +1,14 @@
+<div class = "devisecontainer">
+  <br>
+  <h2>Inloggen</h2>
+  <br>
+  <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.email_field :email, autofocus: true %>
+    <br>
+    <%= f.password_field :password, label: 'Wachtwoord', autocomplete: 'off' %>
+    <br>
+    <%= f.submit 'Inloggen', class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+  <%= link_to "Wachtwoord Vergeten?", new_password_path(resource_name) %><br />
+</div>

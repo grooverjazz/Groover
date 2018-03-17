@@ -1,0 +1,23 @@
+.thumbnail.primary {
+  border: 0;
+}
+
+.thumbnail.primary .caption {
+  padding: 25px 50px 25px 50px;
+}
+
+.thumbnail.primary img {
+  min-width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+.thumbnail img {
+  min-width: 100%;
+  max-height: 40vh;
+  object-fit: cover;
+}
+
+.containernews {
+  max-width: 800px;
+}

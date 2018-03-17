@@ -1,0 +1,32 @@
+<% content_for :combomenu do %>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Nieuwe combo', new_combo_path, class: 'sub-nav-link' %></li>
+  <% end %>
+  <li class="nav-item"><%= link_to 'Boeken', '#', class: 'sub-nav-link' %></li>
+  <li class="nav-item"><%= link_to 'Zoeken', '#', class: 'sub-nav-link' %></li>
+<% end %>
+<div class="jumbotron">
+  <h1>Combo's</h1>
+  <p>Groovercombo's zijn de officiele vereniging's bands van Groover. Deze bands kunnen worden
+  ingehuurd voor feesten, evenementen, of andere aangelegenheden.</p>
+</div>
+<% if Combo.none? %>
+  <h1>There are no combo's in the website database.</h1>
+<% else %>
+  <div class = "paddedcontainer-medium">
+    <div class="row">
+      <% @combo.each do |ccombo| %>
+        <div class="comboblock">
+          <%= link_to(combo_path(ccombo.id)) do %>
+          <div class="comboblockoverlay"></div>
+          <%= image_tag ccombo.cover.url %>
+          <div class="combotext">
+            <h3><%= ccombo.name%></h3>
+            <p><%= ccombo.short_text %></p>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

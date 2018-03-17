@@ -1,0 +1,21 @@
+<% content_for :associationmenu do %>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Aanpassen', edit_association_path, class: 'sub-nav-link' %></li>
+  <% end %>
+<% end %>
+
+<div class = "paddedcontainer-large">
+  <h1>Verenging informatie aanpassen</h1>
+  <%= bootstrap_form_for @association do |a| %>
+  	<%= a.text_area :content %>
+    <%= a.submit 'Verenging informatie aanpassen', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#association_content' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+

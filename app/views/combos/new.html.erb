@@ -1,0 +1,28 @@
+<% content_for :combomenu do %>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Nieuwe combo', new_combo_path, class: 'sub-nav-link' %></li>
+  <% end %>
+  <li class="nav-item"><%= link_to 'Boeken', '#', class: 'sub-nav-link' %></li>
+  <li class="nav-item"><%= link_to 'Zoeken', '#', class: 'sub-nav-link' %></li>
+<% end %>
+<div class = "paddedcontainer-large">
+  <h1>Nieuw Combo</h1>
+  <%= bootstrap_form_for @combo do |a| %>
+    <%= a.text_field :name, label: "Naam" %>
+    <%= a.text_field :short_text, label: "Introductie zin" %>
+    <%= a.text_area :description, label: "Beschrijving", control_class: "editor" %>
+    <%= a.file_field :cover %>
+    <%= a.text_field :music_uid %>
+    <%= a.text_field :facebook_uid %>
+    <%= a.text_field :twitter_uid %>
+    <%= a.submit 'Nieuw combo aanmaken', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<script>
+    var editor = ClassicEditor
+        .create( document.querySelector( '#combo_description' ) )
+        .catch( error => {
+            console.error( error );
+        }
+    );
+</script>

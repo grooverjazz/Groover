@@ -1,0 +1,18 @@
+default: &default
+  adapter: mysql2
+  username: groover
+  password: groover
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: groover
+
+test:
+  <<: *default
+  database: groover
+
+production:
+  <<: *default
+  database: groover

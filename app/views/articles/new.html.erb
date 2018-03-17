@@ -1,0 +1,17 @@
+<% render 'articles/shared/contextlinks' %>
+<div class = "paddedcontainer-large">
+  <h1>Nieuw Artikel</h1>
+  <%= bootstrap_form_for @article do |a| %>
+    <%= a.text_field :title %>
+    <%= a.text_area :content %>
+    <%= a.file_field :cover %>
+    <%= a.submit 'Nieuw artikel aanmaken', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#article_content' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
