@@ -1,6 +1,5 @@
 {
   "name": "GrooverInfinity",
   "private": true,
-  "dependencies": {},
-  "scripts": { "start": "server.js" }
+  "dependencies": {}
 }
