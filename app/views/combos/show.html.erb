@@ -9,18 +9,27 @@
   <li class="nav-item"><%= link_to 'Terug naar overzicht', combos_path, class: 'sub-nav-link' %></li>
 <% end %>
 <div class="thumbnail">
-  <%= image_tag @combo.cover.url %>
+  <% if @combo.tile.present? %>
+    <%= image_tag @combo.tile.url %>
+  <% else %>
+    <%= image_tag @combo.cover.url %>
+  <% end %>
   <h2 class = "withspacing"><%= @combo.name %></h2>
 </div>
 <div class = "paddedcontainer-small">
-  <div class="col-md-10">
-    <p><%= @combo.description.html_safe %></p>
+  <div class="col-md-8">
+    <p style="padding-left: 20px; padding-right: 20px;"><%= @combo.description.html_safe %></p>
   </div>
-  <div class = "col-md-2">
-    <% if @combo.music_uid.present? %>
+  <div class = "col-md-4">
+    <% if @combo.music_embed.present? %>
       <div class="combosidebar">
-        <h3>Soundcloud</h3>
-        <%= @combo.music_uid %>
+        <%= @combo.music_embed.html_safe %>
+        <script type="text/javascript">
+        var iframeElement   = document.querySelector('iframe');
+        var iframeElementID = iframeElement.id;
+        var widget1         = SC.Widget(iframeElement);
+        var widget2         = SC.Widget(iframeElementID);
+        </script>
       </div>
     <% end %>
     <% if @combo.facebook_uid.present? %>

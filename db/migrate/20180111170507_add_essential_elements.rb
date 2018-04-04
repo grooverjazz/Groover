@@ -2,6 +2,8 @@ class AddEssentialElements < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
       t.string :email,              null: false, default: ""
+      t.string :first_name,         null: false, default: ""
+      t.string :last_name,          null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -42,6 +44,7 @@ class AddEssentialElements < ActiveRecord::Migration[5.1]
     create_table :combos do |a|
       a.string :name
       a.text :description
+      a.string :tile_uid
       a.string :cover_uid
     end
   end

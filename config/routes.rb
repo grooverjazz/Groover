@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'articles#index'
+  root 'home#index'
 
+  resource :home, only: %i[ index ]
   resources :dashboard, only: %i[ index ]
   resources :articles, only: %i[ index show new create edit update ]
-  resources :combos, only: %i[ index show new create edit update ]
+  resources :combos, only: %i[ index show new create edit update booking ]
   resource :contact, only: %i[ show edit update ]
   resource :association, only: %i[ show edit update ]
 

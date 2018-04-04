@@ -8,6 +8,7 @@
   <h1>Verenging informatie aanpassen</h1>
   <%= bootstrap_form_for @association do |a| %>
   	<%= a.text_area :content %>
+    <%= a.file_field :banner %>
     <%= a.submit 'Verenging informatie aanpassen', class: 'btn btn-primary' %>
   <% end %>
 </div>
