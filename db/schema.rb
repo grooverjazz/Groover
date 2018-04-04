@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180116105346) do
+ActiveRecord::Schema.define(version: 20180404130840) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -20,13 +20,15 @@ ActiveRecord::Schema.define(version: 20180116105346) do
 
   create_table "associations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
+    t.string "banner_uid"
   end
 
   create_table "combos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.text "description"
+    t.string "tile_uid"
     t.string "cover_uid"
-    t.string "music_uid"
+    t.text "music_embed"
     t.string "facebook_uid"
     t.string "twitter_uid"
     t.string "short_text"
@@ -44,6 +46,12 @@ ActiveRecord::Schema.define(version: 20180116105346) do
     t.string "kvk_info"
     t.string "socialmedia_info"
     t.string "bestuur_info"
+    t.string "banner_uid"
+  end
+
+  create_table "homes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -59,6 +67,8 @@ ActiveRecord::Schema.define(version: 20180116105346) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

@@ -15,10 +15,16 @@ User.create [
   },
   {
     email: 'ward@test.nl',
+    first_name: 'Ward',
+    last_name: 'van der Velden',
     password: 'test123'
   },
   {
     email: 'lars@test.nl',
+    password: 'test123'
+  },
+  {
+    email: 'ingo@test.nl',
     password: 'test123'
   }
 ]
@@ -35,7 +41,8 @@ Combo.create [
     name: 'Wakki',
     short_text: 'Wakki pakzin.',
     description: 'Wakki is een zespersoons jazzfunkformatie uit Delft die de energie van funk en de vrijheid van jazz combineert met elementen uit verschillende andere genres. Voor iedereen is er iets herkenbaars, of dat nu Snarky Puppy, James Brown, Pink Floyd, Avishai Cohen, Bob Marley, Led Zeppelin of Santana is. Wakki is een avontuur waar je naar kunt luisteren en tegelijkertijd op wilt gaan bewegen, waar complexe ritmes op een dansbare manier worden neergezet met verhalende thema’s en waar muzikale vrijheid in nummers ervoor zorgt dat elk optreden anders is. De band is gewend om in verschillende settings te spelen, van festivals en cafés tot netwerkborrels en studentenkeukens.',
-    cover: File.new("app/assets/images/wakki.jpg")
+    cover: File.new("app/assets/images/wakki.jpg"),
+    music_embed: '<iframe width="100%" height="400" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/135370229&color=%23eca42c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>'
   },
   {
     name: 'Heemels Trio',
@@ -60,7 +67,8 @@ User.find(4).add_role :admin
 puts 'SEEDING ASSOCIATION'
 Association.create [
   {
-    content: 'Groover is dé Studenten Jazzvereniging van Delft, een plek waar de Delftse studenten naast hun studie kunnen genieten van diverse muziek als jazz, soul en funk op iedere mogelijke wijze. Dit gaat hand in hand met een muzikale en organisatorische ontwikkeling, zowel individueel als in groepsverband. Groover is een bruisende plek waar honderden technische studenten samenkomen om zich cultureel te verrijken.'
+    content: 'Groover is dé Studenten Jazzvereniging van Delft, een plek waar de Delftse studenten naast hun studie kunnen genieten van diverse muziek als jazz, soul en funk op iedere mogelijke wijze. Dit gaat hand in hand met een muzikale en organisatorische ontwikkeling, zowel individueel als in groepsverband. Groover is een bruisende plek waar honderden technische studenten samenkomen om zich cultureel te verrijken.',
+    banner: File.new("app/assets/images/home_banner.jpg")
   }
 ]
 
@@ -77,7 +85,7 @@ The Netherlands
 bestuur@grooverjazz.nl',
     kvk_info: 'K.v.K. nr. 27294002',
     socialmedia_info:'',
-    bestuur_info: ''
+    bestuur_info: '',
   }
 ]
 
@@ -87,5 +95,10 @@ Commission.create [
     name: 'WebCie',
     description: 'Stoere mannen die websites bouwen jwz broer.',
     members: '2,3,4'
-  }  
+  },
+  {
+    name: 'IlluCie',
+    description: 'Doen dingen met tekenen enzo.',
+    members: '5'
+  }
 ]
