@@ -5,7 +5,7 @@
   <% if can? :edit, :band %>
     <li class="nav-item"><%= link_to 'Combo aanpassen', edit_combo_path(@combo.id), class: 'sub-nav-link' %></li>
   <% end %>
-  <li class="nav-item"><%= link_to 'Boeken', '#', class: 'sub-nav-link' %></li>
+  <li class="nav-item"><%= link_to 'Boeken', combos_booking_path, class: 'sub-nav-link' %></li>
   <li class="nav-item"><%= link_to 'Terug naar overzicht', combos_path, class: 'sub-nav-link' %></li>
 <% end %>
 <div class="thumbnail">
