@@ -29,7 +29,7 @@ class CombosController < ApplicationController
     @combo = Combo.find(params[:id])
 
     if @combo.update_attributes(combo_params)
-      flash[:success] = 'De combo is aangepast.'
+      flash[:success] = 'Het combo is aangepast.'
       redirect_to combo_path(@combo)
     else
       flash[:danger] = 'Er is iets fout gegaan. Probeer het opnieuw.'
@@ -38,7 +38,7 @@ class CombosController < ApplicationController
   end
 
   def booking
-    @contact = Contact.first
+    @combo = Combo.first
   end
 
   protected
