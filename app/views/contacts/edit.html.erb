@@ -7,6 +7,7 @@
 <div class = "paddedcontainer-large">
   <h1>Contactinformatie aanpassen</h1>
   <%= bootstrap_form_for @contact do |a| %>
+    <%= a.text_area :bookingcontent %>
   	<%= a.text_area :content %>
     <%= a.submit 'Contactinformatie aanpassen', class: 'btn btn-primary' %>
   <% end %>

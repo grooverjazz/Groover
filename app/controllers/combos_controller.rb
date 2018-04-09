@@ -39,6 +39,7 @@ class CombosController < ApplicationController
 
   def booking
     @combo = Combo.first
+    @contact = Contact.first
   end
 
   protected
