@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'combos/booking', to: "combos#booking"
   resource :home, only: %i[ index ]
   resources :dashboard, only: %i[ index ]
   resources :articles, only: %i[ index show new create edit update ]

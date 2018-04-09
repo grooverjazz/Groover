@@ -75,17 +75,20 @@ Association.create [
 puts 'SEEDING CONTACTS'
 Contact.create [
   {
-    boeking_info: 'Gijs Vis
-06-21880038
-boekingen@grooverjazz.nl',
-    adres_info: 'D.S.J.V. Groover t.a.v. Bestuur
-Brabantse Turfmarkt 9
-2611 CK Delft
-The Netherlands
-bestuur@grooverjazz.nl',
-    kvk_info: 'K.v.K. nr. 27294002',
-    socialmedia_info:'',
-    bestuur_info: '',
+    bookingcontent:
+    '<h3>Boekingen</h3>
+    Gijs Vis<br>
+    06-21880038<br>
+    boekingen@grooverjazz.nl',
+    content:
+    '<h3>Adres</h3>
+    D.S.J.V. Groover t.a.v. Bestuur
+    Brabantse Turfmarkt 9
+    2611 CK Delft
+    The Netherlands
+    bestuur@grooverjazz.nl
+    <h3>Kamer van Koophandel</h3>
+    K.v.K. nr. 27294002',
   }
 ]
 

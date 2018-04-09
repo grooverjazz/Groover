@@ -41,12 +41,8 @@ ActiveRecord::Schema.define(version: 20180404130840) do
   end
 
   create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "boeking_info"
-    t.string "adres_info"
-    t.string "kvk_info"
-    t.string "socialmedia_info"
-    t.string "bestuur_info"
-    t.string "banner_uid"
+    t.text "bookingcontent"
+    t.text "content"
   end
 
   create_table "homes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

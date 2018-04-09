@@ -1,5 +1,28 @@
 <% content_for :contactmenu do %>
-  <% if can? :edit, :band %>
-    <li class="nav-item"><%= link_to 'Pagina Aanpassen', edit_contact_path(@contact.id), class: 'sub-nav-link' %></li>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Aanpassen', edit_contact_path, class: 'sub-nav-link' %></li>
   <% end %>
 <% end %>
+
+<div class = "paddedcontainer-large">
+  <h1>Contactinformatie aanpassen</h1>
+  <%= bootstrap_form_for @contact do |a| %>
+    <%= a.text_area :bookingcontent %>
+  	<%= a.text_area :content %>
+    <%= a.submit 'Contactinformatie aanpassen', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#contact_content' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#contact_bookingcontent' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

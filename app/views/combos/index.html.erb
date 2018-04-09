@@ -2,12 +2,13 @@
   <% if can? :new, :band %>
     <li class="nav-item"><%= link_to 'Nieuwe combo', new_combo_path, class: 'sub-nav-link' %></li>
   <% end %>
-  <li class="nav-item"><%= link_to 'Boeken', '#', class: 'sub-nav-link' %></li>
+  <li class="nav-item"><%= link_to 'Boeken', combos_booking_path, class: 'sub-nav-link' %></li>
 <% end %>
 <div class="jumbotron">
   <h1>Combo's</h1>
   <p>Groovercombo's zijn de officiele vereniging's bands van Groover. Deze bands kunnen worden
   ingehuurd voor feesten, evenementen, of andere aangelegenheden.</p>
+  <a href="booking.html">Boeken</a>
 </div>
 <% if Combo.none? %>
   <h1>There are no combo's in the website database.</h1>

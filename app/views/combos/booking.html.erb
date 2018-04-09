@@ -1,5 +1,11 @@
+<% content_for :combomenu do %>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Nieuwe combo', new_combo_path, class: 'sub-nav-link' %></li>
+  <% end %>
+  <li class="nav-item"><%= link_to 'Boeken', combos_booking_path, class: 'sub-nav-link' %></li>
+<% end %>
+
 <div class = "paddedcontainer-large">
 	<h1>Boeken</h1>
-	<p>Boeken tekst</p>
-	<p><%= @contact.boeking_info %></p>
+	<p><%= @contact.bookingcontent.html_safe %></p>
 </div>
