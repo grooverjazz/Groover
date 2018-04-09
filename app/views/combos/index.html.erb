@@ -15,15 +15,17 @@
   <div class = "paddedcontainer-medium">
     <div class="row">
       <% @combo.each do |ccombo| %>
-        <div class="comboblock">
-          <%= link_to(combo_path(ccombo.id)) do %>
-          <div class="comboblockoverlay"></div>
-          <%= image_tag ccombo.cover.url %>
-          <div class="combotext">
-            <h3><%= ccombo.name%></h3>
-            <p><%= ccombo.short_text %></p>
+        <div class="col-sm-6 col-md-3">
+          <div class="comboblock">
+            <%= link_to(combo_path(ccombo.id)) do %>
+            <div class="comboblockoverlay"></div>
+            <%= image_tag ccombo.cover.url %>
+            <div class="combotext">
+              <h3><%= ccombo.name%></h3>
+              <p><%= ccombo.short_text %></p>
+            </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       <% end %>
     </div>
