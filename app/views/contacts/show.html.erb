@@ -1,13 +1,10 @@
+<% content_for :contactmenu do %>
+  <% if can? :new, :band %>
+    <li class="nav-item"><%= link_to 'Aanpassen', edit_contact_path, class: 'sub-nav-link' %></li>
+  <% end %>
+<% end %>
+
 <div class = "paddedcontainer-large">
 	<h1>Contact</h1>
-	<h3>Boekingen</h3>
-	<p><%= @contact.boeking_info %></p>
-	<h3>Adres</h3>
-	<p><%= @contact.adres_info %><p>
-	<h3>Kamer van Koophandel</h3>
-	<p><%= @contact.kvk_info %></p>
-	<h3>Social Media</h3>
-	<p><%= @contact.socialmedia_info %></p>
-	<h3>Bestuur</h3>
-	<p><%= @contact.bestuur_info %></p>
+	<p><%= @contact.content.html_safe %></p>
 </div>
